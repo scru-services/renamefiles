@@ -1,10 +1,10 @@
-// $(document).bind("ajaxSend", function(){
-// 	$("#loading").show();
-// }).bind("ajaxComplete", function(){
-// 	$("#loading").hide();
-//  }).bind("ajaxError", function(){
-//  	$("#fail").show();
-//   });
+$(document).bind("ajaxSend", function(){
+	$("#loading").show();
+}).bind("ajaxComplete", function(){
+	$("#loading").hide();
+ }).bind("ajaxError", function(){
+ 	$("#fail").show();
+});
 
 
 (function( $ ) {
