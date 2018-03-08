@@ -117,7 +117,7 @@ $id = 1;
 $allowed_types = ['image/jpg', 'image/png', 'image/jpeg', 'audio/x-m4a'];
 $allowed_file_extensions = array('.jpg', '.jpeg', '.gif', '.png', '.m4a');
 $mircotime = round(microtime(true));
-$dir_name = __DIR__ . '/../../../../uploads/' . $mircotime;
+$dir_name = __DIR__ . '/../../../../../uploads/' . $mircotime;
 $zip_name = 'renamedfiles_' . $mircotime . '.zip';
 mkdir($dir_name);
 
