@@ -23,6 +23,7 @@
 		<div id="fail">
 			fail
 		</div>
+		<progress id="prog" value="0" max="100" style="width:100%; display:none;">0%</progress>
 		<h4>Choose Files</h4>
 		<form id="upload" class="dropzone" method="post" action="" enctype="multipart/form-data" multipart="">
 			<input id="file" type="file" name="file_upload[]" multiple>

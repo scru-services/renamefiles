@@ -366,13 +366,33 @@ $(document).bind("ajaxSend", function(){
             processData: false,
             data: form_data,
             type: 'post',
+			beforeSend:function()
+			{
+				$('#prog').show();
+				$('#prog').attr('value','0');
+				alert('beforeSend');
+			},
+			xhr: function() {
+				var xhr = new window.XMLHttpRequest();
+				// Upload progress
+				xhr.upload.addEventListener("progress", function(evt){
+					if (evt.lengthComputable) {
+						var percentComplete = evt.loaded / evt.total * 100;
+						//Do something with upload progress
+						console.log(percentComplete);
+						$('#prog').attr('value',percentComplete);
+					}
+				}, false);
+				return xhr;
+			},
             success: function(php_script_response){
 				window.location.href = "download/" + php_script_response;
+				$('#loader-icon').hide();
 				// alert(php_script_response);
             },
             error: function(php_script_response){
                 $('#error').html(php_script_response);
-				alert(php_script_response);
+				console.log(php_script_response);
             }
          });
 
