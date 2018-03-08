@@ -8,13 +8,30 @@
 
 	$project_subdomain = get_subdomain($projects[$project_id][$project_lang]['slug']);
 
-	$project_desc_title = 'example title optimized for SEO'; // goes into a <h2> element
-	$project_desc = 'Unique description optimized for SEO. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'; // goes into a <p> element, no html
+	$project_desc_title = 'Rename Files like a Charm'; // goes into a <h2> element
+	$project_desc = 'Rename your Files with the rename files service.'; // goes into a <p> element, no html
 
-	$project_referrals = [1,2,3,4];
+	$project_referrals = [1,2,3,4,6];
 
 	// keywords for this project
-	$project_keywords = array('keyword', 'keyword');
+	$project_keywords = array(
+		'rename',
+		'files',
+		'stack',
+		'automation',
+		array(
+			'key' => 'webkitdirectory',
+			'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory',
+		),
+		array(
+			'key' => 'webkitrelativepath',
+			'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath',
+		),
+		array(
+			'key' => 'filelist',
+			'url' => 'https://developer.mozilla.org/de/docs/Web/API/FileList',
+		),
+	);
 
 	// scripts for this project, the order matters
 	$project_scripts = array(
