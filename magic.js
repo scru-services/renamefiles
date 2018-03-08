@@ -372,7 +372,7 @@ $(document).bind("ajaxSend", function(){
             },
             error: function(php_script_response){
                 $('#error').html(php_script_response);
-				// alert(php_script_response);
+				alert(php_script_response);
             }
          });
 
