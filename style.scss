@@ -1,0 +1,222 @@
+// import scru style.scss
+@import '../../scss/style.scss';
+
+.result-container {
+	margin-top: 50px;
+	@extend %result-spacing;
+	.clear {
+		@extend %textlink;
+		position: relative;
+		float: right;
+		cursor: pointer;
+		color: $primary-red;
+	}
+	.result {
+		user-select: none;
+	}
+}
+
+#submit {
+	@extend %textlink;
+	position: relative;
+    float: right;
+	cursor: pointer;
+}
+
+#loading, #fail {
+	display: none;
+}
+
+.file.success {
+	height: 60px;
+	width: 100%;
+	padding: 10px;
+	// text-align: center;
+	// border: 1px black solid;
+
+	.glyphicon {
+		position: relative;
+		display: table;
+		float: left;
+		height: 100%;
+		width: 50px;
+		background-color: $primary-light-gray;
+		color: #aaaaaa;
+		cursor: move;
+
+		p {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+	}
+
+	img {
+		position: relative;
+		float: left;
+		height: 100%;
+		width: 60px;
+	}
+
+	.filename.sortable {
+		width: calc(100% - 185px);
+	}
+
+	.filename {
+		position: relative;
+		display: inline-block;
+		margin-left: 5px;
+	    height: 100%;
+	    padding: 9px;
+		width: calc(100% - 115px);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		// &:hover {
+		//     // background: $primary-light-gray;
+		// 	&:before {
+		// 		/* ------- THIS IS THE MAGIC ----------------*/
+		// 		content: attr(filename);
+		// 		display: block;
+		// 		background: $primary-medium-gray;
+		// 		position: absolute;
+		// 		bottom: 130%;
+		// 		padding: 5px;
+		// 	}
+		// 	&:after {
+		// 		content: "";
+		// 		position: absolute;
+		// 		display: block;
+		// 		width: 0;
+		// 		height: 0;
+		// 		border: solid 10px transparent;
+		// 		border-top-color: $primary-medium-gray;
+		// 		top: -44%;
+		// 		left: 50%;
+		// 		margin-left: -10px;
+		// 		z-index: 2;
+		// 	}
+		// }
+
+		&:hover {
+			// background: $primary-light-gray;
+			color: white;
+			&:before {
+				/* ------- THIS IS THE MAGIC ----------------*/
+				content: attr(filename);
+				display: block;
+				background: $primary-medium-gray;
+				position: absolute;
+				width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+		}
+	}
+
+	.delete {
+		position: relative;
+		display: table;
+		float: right;
+		height: 100%;
+		width: 50px;
+		background-color: $primary-red;
+		cursor: pointer;
+
+		p {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+	}
+}
+
+.sortable-ghost {
+	opacity: 0.2;
+	transition: opacity 0.8s ease-in-out;
+}
+
+// #replaceform {
+// 	position: relative;
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	margin: -10px;
+//
+// 	input {
+// 		width: calc(100% / 2);
+// 		margin: 5px;
+// 	}
+// }
+
+form {
+	h4 {
+		font-weight: normal;
+	}
+}
+
+#renameform {
+	margin-bottom: 15px;
+}
+
+.secondline {
+	margin-top: 0px!important;
+}
+
+#replaceform, #addform, #formatform {
+	// margin-top: -8px;
+	@extend %g-grid;
+
+	@media (max-width: $tablet-portrait) {
+		@include grid-collapse;
+	}
+}
+
+
+.size {
+	color: $primary-orange;
+	font-weight: bold;
+}
+
+.fail {
+	color: $primary-red;
+	font-weight: bold;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// .succes {
+// 	color: $primary-green;
+// 	font-weight: bold;
+// }
+
+[data-visibility="visible"] {
+	display: block;
+}
+
+[data-visibility="hidden"] {
+	display: none!important;
+}
+
+input[type=text] {
+	@extend %input_text;
+}
+
+input[type=number] {
+	@extend %input_number;
+}
+
+select {
+	@extend %select;
+}
+
+.dropzone, #formatform {
+	@extend %result-spacing;
+}
+
+.dropzone {
+	@extend %dropzone;
+}
