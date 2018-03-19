@@ -386,13 +386,14 @@ $(document).bind("ajaxSend", function(){
 				return xhr;
 			},
             success: function(php_script_response){
-				window.location.href = "download/" + php_script_response;
+				// window.location.href = "download/" + php_script_response;
 				$('#loader-icon').hide();
 				// alert(php_script_response);
+				console.log(php_script_response);
             },
             error: function(php_script_response){
                 $('#error').html(php_script_response);
-				console.log(php_script_response);
+				// console.log(php_script_response);
             }
          });
 

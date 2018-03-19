@@ -149,6 +149,11 @@ foreach ($_FILES['file_upload']['error'] as $key => $error) {
 			rmdir($dir_name);
 			die("ERROR: Zero byte file not allowed");
 		}
+		if  ($size > 3)  {
+			array_map('unlink', glob("$dir_name/*.*"));
+			rmdir($dir_name);
+			die("ERROR: File too big");
+		}
 		// Be sure we're dealing with an upload
 		// if (is_uploaded_file($_FILES['upload']['tmp_file']) === false) {
 		// 	throw new \Exception('Error on upload: Invalid file definition');

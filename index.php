@@ -17,90 +17,90 @@
 	<!-- scru-service start -->
 
 	<div id="loading">
-			loading
-		</div>
-
-		<div id="fail">
-			fail
-		</div>
+		loading
 		<progress id="prog" value="0" max="100" style="width:100%; display:none;">0%</progress>
-		<h4>Choose Files</h4>
-		<form id="upload" class="dropzone" method="post" action="" enctype="multipart/form-data" multipart="">
-			<input id="file" type="file" name="file_upload[]" multiple>
-			<label for="file"><strong>Choose your image/s</strong><span class="dragndrop"> or drag it/them here</span>.</label>
-		</form>
+	</div>
 
-		<form id="renameform" name="renameform" data-visibility="visible">
-			<h5 for="renametype">Dateien umbenennen:</h5>
-			<select id="renametype" name="renametype">
-				<option value="replace">Text ersetzen</option>
-				<option value="add">Text hinzufügen</option>
-				<option value="format" selected="selected">Format</option>
+	<div id="fail">
+		fail
+	</div>
+	<h4>Choose Files</h4>
+	<form id="upload" class="dropzone" method="post" action="" enctype="multipart/form-data" multipart="">
+		<input id="file" type="file" name="file_upload[]" multiple>
+		<label for="file"><strong>Choose your image/s</strong><span class="dragndrop"> or drag it/them here</span>.</label>
+	</form>
+
+	<form id="renameform" name="renameform" data-visibility="visible">
+		<h5 for="renametype">Rename Files:</h5>
+		<select id="renametype" name="renametype">
+			<option value="replace">replace Text</option>
+			<option value="add">Add Text</option>
+			<option value="format" selected="selected">Format</option>
+		</select>
+	</form>
+
+	<form id="replaceform" name="replaceform" data-visibility="hidden">
+		<div class="column-6">
+			<h5>Find:</h5>
+			<input id="toreplace" type="text" onclick="document.execCommand('selectAll',false,null)">
+		</div>
+		<div class="column-6">
+			<h5>Replace with:</h5>
+			<input id="replace" type="text" onclick="document.execCommand('selectAll',false,null)">
+		</div>
+	</form>
+
+	<form id="addform" name="addform" data-visibility="hidden">
+		<div class="column-6">
+			<h5>Add Text:</h5>
+			<input id="add" type="text" onclick="document.execCommand('selectAll',false,null)">
+		</div>
+		<div class="column-6">
+			<h5>Ort:</h5>
+			<select name="addplace" id="addplace">
+				<option value="after">after name</option>
+				<option value="before">before name</option>
 			</select>
-		</form>
-
-		<form id="replaceform" name="replaceform" data-visibility="hidden">
-			<div class="column-6">
-				<h5>Suchen:</h5>
-				<input id="toreplace" type="text" onclick="document.execCommand('selectAll',false,null)">
-			</div>
-			<div class="column-6">
-				<h5>Ersetzen durch:</h5>
-				<input id="replace" type="text" onclick="document.execCommand('selectAll',false,null)">
-			</div>
-		</form>
-
-		<form id="addform" name="addform" data-visibility="hidden">
-			<div class="column-6">
-				<h5>Text hinzufügen:</h5>
-				<input id="add" type="text" onclick="document.execCommand('selectAll',false,null)">
-			</div>
-			<div class="column-6">
-				<h5>Ort:</h5>
-				<select name="addplace" id="addplace">
-					<option value="after">Nach dem Namen</option>
-					<option value="before">Vor dem Namen</option>
-				</select>
-			</div>
-
-		</form>
-
-		<form id="formatform" name="formatform">
-			<div class="column-6">
-				<h5>Format des Namens:</h5>
-				<select name="formatkind" id="formatkind">
-					<option value="index" selected="selected">Name mit Index</option>
-					<option value="counter">Name mit Zähler</option>
-				</select>
-			</div>
-			<div class="column-6">
-				<h5>Ort:</h5>
-				<select name="formatplace" id="formatplace">
-					<option value="after">Nach dem Namen</option>
-					<option value="before">Vor dem Namen</option>
-				</select>
-			</div>
-			<div class="secondline column-6">
-				<h5 for="format">Eigenes Format:</h5>
-				<input id="format" name="format" type="text" value="example_" onclick="document.execCommand('selectAll',false,null)">
-			</div>
-			<div class="secondline column-6">
-				<h5 for="number">Beginnt mit:</h5>
-				<input id="number" name="number" type="number" value="0" onclick="document.execCommand('selectAll',false,null)">
-			</div>
-		</form>
-
-		<div id="submit">
-			Dateien umbenennen
 		</div>
-		<div class="result-container" data-visibility="hidden">
-			<h4>Sortable Files<div class="clear all">clear list</div></h4>
-			<div class="result small align-left" id="sortable" contenteditable="false"></div>
+
+	</form>
+
+	<form id="formatform" name="formatform">
+		<div class="column-6">
+			<h5>Name Format:</h5>
+			<select name="formatkind" id="formatkind">
+				<option value="index" selected="selected">Name and Index</option>
+				<option value="counter">Name and Counter</option>
+			</select>
 		</div>
-		<div class="result-container" data-visibility="hidden">
-			<h4>Error Files<div class="clear error">clear list</div></h4>
-			<div class="result small align-left" id="error"></div>
+		<div class="column-6">
+			<h5>Where:</h5>
+			<select name="formatplace" id="formatplace">
+				<option value="after">after name</option>
+				<option value="before">before name</option>
+			</select>
 		</div>
+		<div class="secondline column-6">
+			<h5 for="format">Custom Format:</h5>
+			<input id="format" name="format" type="text" value="example_" onclick="document.execCommand('selectAll',false,null)">
+		</div>
+		<div class="secondline column-6">
+			<h5 for="number">Start numbers at:</h5>
+			<input id="number" name="number" type="number" value="0" onclick="document.execCommand('selectAll',false,null)">
+		</div>
+	</form>
+
+	<div id="submit">
+		Rename
+	</div>
+	<div class="result-container" data-visibility="hidden">
+		<h4>Sortable Files<div class="clear all">clear list</div></h4>
+		<div class="result small align-left" id="sortable" contenteditable="false"></div>
+	</div>
+	<div class="result-container" data-visibility="hidden">
+		<h4>Error Files<div class="clear error">clear list</div></h4>
+		<div class="result small align-left" id="error"></div>
+	</div>
 
 	<?php
 	$days = 1;
